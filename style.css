@@ -2,3 +2,68 @@ body{
     margin: 0;
     padding: 0;
 }
+.logo{
+    height: 100px;
+    float: left;
+    margin-left: -150px;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+li{
+    display: inline;
+    padding: 15px;
+    font-size: 17px;
+    font-family: sans-serif;
+    color: gray;
+
+}
+
+nav a {
+    position: relative; 
+    color: gray;
+    text-decoration: none; 
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 110%;
+    height: 2px; 
+    bottom: 0;
+    left: 0;
+    background-color: blue; 
+    transform: scaleX(0); 
+    transform-origin: bottom middle; 
+    transition: transform 0.2s ease-out; 
+}
+
+nav a:hover::after {
+    transform: scaleX(1); 
+    transform-origin: bottom middle;
+}
+
+
+.username{
+    color: blue;
+    font-size: 16px;
+    font-family: sans-serif;
+    background-color: aqua;
+    height: 50px;
+    width: 100px;
+    align-content: center;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.username:hover{
+    transform: translateY(-7px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
