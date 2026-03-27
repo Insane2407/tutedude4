@@ -90,6 +90,9 @@ p{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+a{
+    text-decoration: none;
+}
 
 .button{
     font-family: sans-serif;
