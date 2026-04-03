@@ -15,8 +15,8 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#booking">Services</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="#footer-details">Contact Us</a></li>
+                <li><a href="#footer-details">About Us</a></li>
             </ul>
         <div class="username">
             Username
@@ -57,30 +57,154 @@
                 Experience
             </div>
         </div>
-        <div class="booking" id="booking">
-            <div class="left-list">
-                <h1>Our services</h1>
-                <h3>Click On The Add To Cart Button To Add The Services To Your Cart</h3>
-                <br>
-                <hr>
-                <br>
-                <h3>Dry Cleaning &nbsp;- &nbsp; ₹200.00</h3>
-                <h3>Wash And Fold &nbsp;- &nbsp; ₹100.00</h3>
-                <h3>Ironing &nbsp;- &nbsp; ₹30.00</h3>
-                <h3>Stain Removal &nbsp;- &nbsp; ₹500.00</h3>
-                <h3>Leather & Suede Cleaning &nbsp;- &nbsp; ₹999.00</h3>
-                <h3>Wedding Dress Cleaning &nbsp;- &nbsp; ₹2800.00</h3>
-                <br>
-                <hr>
-                <br>
-                ⓘ Add the items to the cart and book now
-                
-            </div>
-            <div class="right-up"></div>
-            <div class="right-down"></div>
+        <div id="booking" class="booking">
+    <div class="card left-panel">
+        <h2>Our Services</h2>
+        <div class="subtitle">Click On The Add To Cart Button To Add The Services To Your Cart</div>
+        <hr>
+        <div id="services-list"></div>
+        <hr>
+        <div class="info-footer">
+            <span>ⓘ</span> Add the items to the cart and book now
         </div>
+    </div>
+
+    <div class="right-panel">
+        
+        <div class="card">
+            <div class="cart-header">Added Items</div>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Service Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-body">
+                    </tbody>
+            </table>
+            <br>
+            <div class="cart-total">
+                <span>Total Amount
+                </span>
+                <span id="total-amount">₹0.00</span>
+            </div>
+            <br>
+        </div>
+
+        <div class="card">
+            <div class="form-header">Book Now</div>
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" id="name" placeholder="John Doe">
+            </div>
+            <div class="input-row">
+                <div class="input-group" style="flex: 1;">
+                    <label>Email ID</label>
+                    <input type="email" id="email" placeholder="mailid@gmail.com">
+                </div>
+                <div class="input-group" style="flex: 1;">
+                    <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone Number</label>
+                    <input type="tel" id="phone" placeholder="0000000000">
+                </div>
+            </div>
+            <div id="form-error" class="error-message"></div>
+            <button class="btn-book" onclick="handleBooking()">Book now</button>
+        </div>
+    </div>
+</div>
+<section class="features">
+        <div class="features-section">
+            <div class="feature-item">
+                <i class="fa-solid fa-jug-detergent feature-icon"></i>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE8ElEQVR4nO2bWYwVRRSGv6DiEHHcI7gSQZkoUcA1RhF8Eo0L8cEdFZ5c4pOo0YiK+qQjGvdEjfCi0cSoEIKKgJowi/BoMDHGiDoIgoLL4IjeNif5Kznp3Jl7u2/3dPfk/kk99Kk61VV/1zl16tS90EYbw6EDWA5sB6KKlgHgGc0lMZaXYAJZle40BGyX8rlUF+e7lZAYkUrVkXoeUUzxCuBH4AdgfhPy0cblGsNwZpAYUUzRd76tCfloY6TJjykC+t37ekcYbyN5Q8QV52uyNsnLmpDnhT43tp4RxttI3hBVc4JtAsiZgP46jqW3QX3epXc0nWBfnU57GtTnXXpivmhbngRUFW0CKAEBk4HFwEpgC7AL+EflF2AzsAJYBExiDBEwF1gN/JvArvcDq4A5Lb67UAKmAWtdH0PAR8AdwDnA0cCBwMH64hcBD8qR1pzeGmBqyjG0PI8opeJC4E/p/gY8AHQm0D8BeEHmYX38AdxERQhY5vReBI50dWcAjwIfAz8BgyJqK7AOuB/ocu1P1aoJ/S0tOwHL1P5v4HYnt+W9MYEP2ACcJ90DgKdd3cOjMI9UigvVdh9wiWQTgJecTZs5vAJcBZyoPN0hwHTgauA1YLfams7LwHj1dZcbz3U5ziOV4jRn87dIdhSwya2Ix5r0A4dqJf0l3c+cGT0r2V7g5BzmkVoxeHvLvoYv3yvZd8CZJMcsF9aa+RykXWODZO+VhYC5arNDX8/whmTfAseTHsc5EsyUEJn/JUzW5krAarW5O0aIefgZtI5ZMoeam/CbesfbRRMwWVHbHgU03hnu0BfMAo+rz/V6nuFI7iySgMWqf8vJxgHvSG57eBbodLuD7RiGb/S8oEgCVqr++joD/ll1WcXzwa/cp+cQG9jtVWEEbFF9vS3pIdW9Sja4Rv1ZFGm4Vs+2AxVGwC7F67bs4zhLul+TDabH+pup56+KJGBIJNTDROlagJQFJrqDkWGKnr8vKwGd0v09zYtH6M+iwLADNXvpWYgJzMzZBMZrq/28SAI2q96WYxyPZOwEF8ScYDhv2GGqMAJWqP6GmPwIrY48tsElKXRzI2BRnZDUzOH9BFtUMzjMBUKnuV3m9KIJmKRQeO8wobA5qizwhPq0rBHKJQwmuInO9TC0Sm3ucYehmgaY5hgcx2z1ZX2eLVm33vlBGQiYozY73cHkdZcLsARnFsfh5538Qx2JLy1LQmSN2j3nEiKbWkyIzHaTX6+EiA+KTkrQV+4ETFWEZm1vlczSWF+4POFSDbwRbBU9qWUfKQMUUmIhP5jXPFpSvNnl/+ZJ1qGlG5Kiu5XovFJfcIJI6dJhx7a6X9W2Jt3w5e8UkZY6LyUBKOcfKUS2XEHAhfLgUZNlnXN445QkDSRadri0BHgSIqXA7QosoEumsFY/ZhiU6WxVhLfE7fPBtD51K+Je0mFUCUDXWMEn7NGd3+E0jylyqPvcfYLdJVAVAgynuIRppEPTJ0qe2q3PMbLvDgVM83SHuNFlfWtKr7WaWyyEgICLtW/vT+ADzJG+q1vkLFAoAQHHArcppf2lfhQxpLJT1+J2NXZj7EJ1zBBQJNoEkCEB/bHf5lVBlikB0RiRNYWoRAMuDQF9sV9nVkHWdoKknMeAFMPvdaqIC1r501R3guit7OWpNAR0iISwEqpYBnSTHJK2bbTRRht4/A+/w7V6+6dxIAAAAABJRU5ErkJggg==" alt="washing-machine">
+                <h3>Premium Services</h3>
+                <p>Elevate your wardrobe with our meticulous dry cleaning, ensuring garments look and feel as good as new.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-headset feature-icon"></i>
+                <img height="65px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADCklEQVR4nO2ZSWgUQRSGv5E4KuJuLgriQdxFES9KBBEFvQgKiogXl4MX9SBRVAQXSOICroi75CAePIjg7kXFQURBiV6MgkEdD0E07knGpKXgDzTDZKZnUtXdI/nhMZNJ16v6uurV8gp69X9rHLAOOAc8AN4DX4C/QANQSYw1ENgIPAe8AhZLmD7ABuBzAAC/ZYCPwBPgMrAWGB0VRCVwp0iAQnYPmBV2HDRZhuiyTuAk0Nc1xCgFsOfY7gPDXEFUAI9DgPBktxWH1lUdIoQn2+1iim2OAKTV9oy2LQIIT3bEFkQipADvzr4DSRsgMyKE8GTzbIDssNyol8CvIsvU2QC5ZhHiNNAfWAz8KaLcDRsgLywApIC5WX6rgHTA8g02QL72YOq8VGB8DwUuBvDVYgOkmH1SI1APLAcGF1FHlVZyL485AWnSwck0ejuwQG+3p5qudSM0ENfKAFuBETadRgGyxYXTKEBG6jPlqzOt9SRZTiD56q6lBA2IIUi6FEf7YgjileKoQQXXAweAN8BDyhDkhwqaIRaFPFsgH1RwLGUOckUFz+iAFba8HGaSe0VrKtAuByY2dgH9iBakplRni4BvPkdLCU+PsnqipqfHXrOT3SOHJlXqUglgme9v61N+hd5Kp9KmrrQQaAM2AcMFYWZPq+rqlUO4003VcQyYre+vXOR+25SiMW/Ltiapx41NBE75oKzrvJyb3rGts/J9FZipBEUHMBlHb61DV2pD8jxnZpf9wCdfwDbrNxNv2ZqiA5W5pluteDRlTuBQ9arkcJ5n6vKszLm24rd8gd3uu/xxuj0ao27PaNHMpaCpnlzWCRxXDsy59qrSVDdDpRSQRgGYYRaakr7kXa6UZm2AoWUucu7qt2e2ktWlpm9aNRRWZv0vqQan8wT7UV9cTCBirdAsltH3oNuQrsmgXbngWGizGmWADhbYIZur7eu+oF5DzLQK+KkGvgN2augNUuPnaCi16BnzuYSYahrwNMDsZLbn44m5EjrDmEXzLfBbFzuvgQvA/Kgb2CtC0D9BQ7E6SxlQ7QAAAABJRU5ErkJggg==" alt="online-support">
+                <h3>Quick Support</h3>
+                <p>We're committed to providing prompt solutions to ensure your experience is smooth and worry-free.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-boxes-packing feature-icon"></i>
+                <img height="65px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEVUlEQVR4nO2Za4hVVRTHf6PjhJOOGdiXMB/Yh5A0Q+2DlWCKj1DoIWGRmGhEIZpJZvmIIAfFBz7QRFGpL9KHyQhLyQciMQoig6hBYClqvtPSMR2dubHgv2FxvNd7Zu7j3Evzhw337nP23mft9frvtaEd7WhHKWMgsAI4AJwEGoDNwKtARWsnewdYBIwAqikOXgB2AakHtAZgQIy5egM97Mc1N7gJ+AWoBcYBNXkW4CVgn1vP1l6lTXwSGArMAc7o+V/AJ0BfjX8UGAUsAH4ALuq9c/ZwCLASOAzci+zKPfXb83dzaO9rg8K8V4D5QLcMAncGfsqisdCuAmuiE9RIE7VauCnmZHHbJWAu0DWmBscC24A/gX+B89Ko+dUkoF9cU6iW2j8HNsRsG6VqL8AF4CPgYcoAHYDxwJGIAHOLGERyFmAi8KsT4DQwU7Ze8ugETAZ+cwL8IQEeogzQUVHotBPAtPE2UEkZ4TsnwFHgDZlXWaGnC6OvtIVGCBY2J0i7iaAG+AdoAT5s5dhq+dR+jbcN2Q5UkRCmAM36kG+BXlnef0755W9nkjdEP+z390kK85rjaE36mA+AMcBIhePaSEi2Vg9MU2Z/WiaauDCPA5uAO1loyWVRiv5p5igZYRCFtqPAemAn8DNQJ42MUL55EAZI2JIQJld4YX4sl4SaCe3ClPI5/nIhzKw6hwzeVjyjU2ReAoDlihPKwpbMvgG6U8LCbFNFYxkwVWf4GY5GXHC5or7I/GhQBmE6qCBhR+FZOtBxPUMia1FFw/AEcEr9LxdRkCDMVSeM+c3tyLca5eExMdH54k5h9+2I6vGF+lcXoEyUDc86bhY22c5Du4Gv9P334YbKQD4jm7PvcRM1J+Azk9zuW1EuK05qwPPOHjc6AY6IyqdEySuKSIVScoVY+NRJbqTwoP43AqMdYTyr/mEUBxO03rG4AywqbU3j+Fa489igZytdSTNfmC6fWCDq8qaip633cWsn668wnFKFz6OrM8HQ9ilw5APvZYiku2Kw6bSoVDI0jbyovm66Bgjmt8OFx715EqTSVWlOaI3puVZpFmvC29qR864IZxX0UJQI4bFPfmShXvPFuVqIhU7yh3BOT6mg/FTkvVA9X6fSf5wSUYWCyaFwx+HM+o42L+/14p4qPIRLGI/hwM005/M4eaZB71vFfZEsIGh3LQWC2egtFRyGudunRvfxi519fx1jzvEZHLuu0MXvpVrornYz8B4LAF0cN2tSoPAm1j0Dy7Xxv6tuPEslpILDtLJEmgm7dzxiyxU6HDW7/rf0rnE2j+XqN8qTCCp1rRZYqcfsNFl4pBN8p5h1ndPuYBJEX+WYm/KVjiqltqhZfdhjRxpfaJS2EscW91F33e8v07y7Xs+2impMjYTdRGEmNk+U5bqLWJdUSQx4xN0tmvZKHlXymZRMzpz5M8fNDpfTfUqVckjUH47FPRSVGiwfLFQd+PW2Mlf+T/gPNf+w+3qK0+wAAAAASUVORK5CYII=" alt="handshake--v1">
+                <h3>Hassle Free Delivery</h3>
+                <p>Enjoy seamless service with our convenient pickup and delivery options, tailored to your schedule.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-hand-holding-dollar feature-icon"></i>
+                <img src="data:image/png;base64,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" alt="external-money-flow-seo-and-web-smashingstocks-detailed-outline-smashing-stocks">
+                <h3>Affordable Prices</h3>
+                <p>Experience exceptional care without breaking the bank - our affordable prices make laundry day stress-free.</p>
+            </div>
+        </div>
+    </section>
+<section class="newsletter-section">
+        <div class="container newsletter-container">
+            <div class="newsletter-text">
+                <h2>Subscribe to our<br>newsletter.</h2>
+            </div>
+            <div class="newsletter-form">
+                <div class="input-row">
+                    <input type="text" placeholder="Full name">
+                    <input type="email" placeholder="Email">
+                </div>
+                <button type="submit">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer" id="footer-details">
+        <div class="foot footer-container">
+            
+            <div class="footer-col">
+                <h2 class="footer-logo">Logo</h2>
+                <h4 class="about-heading">About us</h4>
+                <p>Here you will get your dress like new and can get every dress ready for any function and respect</p>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="col-heading">Important Links</h3>
+                <section class="footer-links">
+                    <big><a href="#footer-details">About us</a><br>
+                    <a href="#footer-details">Contact us</a><br>
+                    <a href="#footer-details">Privacy Policy</a><br>
+                    <a href="#footer-details">Terms of use</a><br>
+                    <a href="#footer-details">Refund Policy</a></big>
+                </section>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="col-heading">Contact</h3>
+                <section class="footer-contact">
+                    <big>laundry@site.com <br>
+                    +91 91234 56780 </big>
+                </section>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="col-heading">Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"><img height="40px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD5ElEQVR4nO1ZOW/UUBB+Bae4KUnLKQrujkN0ICSOIl0kC8f+xl7JRcQRqFIEaKMgShD8AQ6JCpa7A3ogoeFqIRCuikOfMxaraON99trrRdpPsmSt35s3376ZeTPzjOmhh+oRBMEGAMMick9EXorINxH5U9BDWZRZF5HTnuetL5wAgJ0A7heotO1zLwzDHUUQmC8il0Tktwr+COByEASHuTsDAwNLCvmnjDGUFQTBBhE5AuAK19I1ufbFkZGRebkEh2G4SkQeqLDvIjIaRdFy0yFEUbQcwDkAP5LdcRxnZeadSEwJwAealqkIIrIFwBsl87i/v39BlsmXlMQ713XXmIrhuu4aEXmvZMatJvHfV7v8HgTBNtMlALCdZgbgF99tJiTRadR0GUTkvOpWTx2oUSOOTp107AQADtEnaUa+7x9s8n0FgE+q47o0QcPqG1dMBZB/fhD7Z7MxAK7q91Npguoq6EiZCrdDRESO6fe7aYImOKid9IDnD4DjAG4BeKWpxzd9v8lvHNNsru/7B0mGJAAcSDN/yksjMs1Brusuy0pgaGhosYicFZHPFqnHFIAzjuMsyrqO67rLVMZ0GpF4oZxx/nmDoncAeEkawwfARv5Gk2gY9yzPOSWt9MxDhIrQFJLtBrC71ZwgCPYkZpzn0JWiiag5xTsB4GGWXEhzuUc692kWM5OiiahPcM7LzAndPzLJzgxXQkSViB3bxpzmgu/7+5IAEM4RzUolwjCaOHYGvVPPLwBOx4nwTNDxgxl0nkuWr7KuV0Ektm2GWNMmGJpbHnIlmtZXjq3VaktNm6AMJfL1vybCTFuJfLEZ3zOtNGdn2mHaBABU5uzQ8JuaTltCG37VhF89EKdUgb0mJwDsTw5ExzI7KDNFmbA9lZvULpMtK76yiTDRYyqu8x5lITM4OLgawJOuSBqbpPGTzJ2MhTkBeN01afwsMk8bCqY6I1EYhpt4zvDhu0an2LGTnSirsJrOW+rSNLQLM2VT6vLqIIqihWWVuhPtNh8YeRhGAdxgncIMQLMAvt/gtzy1S9bmQ6XtIBsk7aDU8oHbXWWDzgYick11PNG1LdNWsG6ZzkoXzpkuA4AL1lUp7+x4raAt/Nbt+w4BM9cdP3mt4HneVqtJvLNT5uzF9pWuZWt9+hr6wmPWE3nx2GBiH3zf32Uqgud5W0XkbXLQZr4UZaxvIMMLyfN0NtNZx75Ac0rKhdznj+7MOO1ShX3i/QSAo6zqiihzE1AWZirFY7pGHJ107bHc19ON8DxvM4DbFqlH0U+9lIDD2M26QTvqcfpRlNKayrxgaBWRk7VabW3hBHrowWTGXyt8elKF2s9CAAAAAElFTkSuQmCC" alt="instagram-new--v1"></i></a>
+                   
+                    <a href="#"><i class="fab fa-facebook-f"><img height="40px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFEUlEQVR4nO1ZWahVVRjeaio0lxmU2hxI2gBRD71kVjYRdW/tpLhwu+fu/X1rn8N5K82HOg3aNQgqIuqhhwZshsgKgyKLMCkblCgr8qESQk2brExu1/jP+XctdnfPZ7gP94cFh3X+9a//W2v943acSZqkiU3VavVQ3/evILkawKsAvgSwh+R+Gfp7K8m1JEcAXC5rnAlCU1T5FwDsI3kg5/iT5HMCSmQ5vSCS1wPYYik1SnIDgJUA+kmeEQTBUQCmy5Dfnuct0P9WkXxf1zTXA9hMsq9rAKrV6mkk37QAfAvg1kqlcnxeWSTnkFwG4DsL0BtBEJzidJIA3ETyV91wBwBPTrusXNd1ZwAAyV0q+xcAS50O0BR5MtapPSVPpd2bDA8PH01yjbXPXe0G8YgK/8sYU3E6TGjdzn4F83C7hIY3sdcYc5nTJfJb3vD3ttyM2kR4E6VBADhVXK3KvRGAC2BJEATnGmOOjQHTvBmSN5TxTk3DLvOcxJZI3mF7prjhed45Mc9M/v+5kDcLXawYdlEQvu+fB2C7Zbw/kFynBr1GA+l6AH/EARGyHMA6J2+wC11sUe8EYD6A31SBd33fvyCBd3MSkFqtNit0zSSvyeOlmhFb4kQRECKD5Mcq45lGo3FQEnMaECEARuV9kimdUQMLI3ahYCcGHMoYGBg4ZJz/jyG5yPf9S2QA2JYGxHXdGSS/V5tNdzzyblWJZUVAqIwn4mSQXBGXYHoJQIQA3Ka38myiApVK5TDNSEeL5E7Whl+rcmdH5pfqvLjUd/TQ7HFSktwgCOYB+FucA4CDszyrDSVATCc5Jsq6rjst8t9HeqK1EvI/UBlLYpmkKFKmlUU3Ghoamq2HsdOer9frM0OAZQoqkiOq472xTFLZKVN/0Y0kaKmMbfa853lzdX67U4L4X2h4JYnpKzW6BWXSEL2RbyLz83V+q1OCjDELU+WQ3C1Mkk5PVCBouW6RsyuWSZJDYRKfnVHotdJUsIfkRClARqNrrLXnp+2ptiZPa18SkLAGyBQIJSNNSALjgMSOWq02K21PDYzNjDyWSU/lwODg4JE5gbwsOZk9ABwRUWBalCdsSKQ+lf9XkXLYPzpxJL0oTQEWOjmAAHjeKUjGmMUK5L0s/ADO1D0/T1LsNRXa1y0gAAKV8XhG/n7VcW2SYqtSg834QLYAWG4PkrR55f1HeXSsV8VuyQjkPuW/J4npKlVsY7eNHcDVeVKUxAxYUm4t+CWVmJMmNAiCszSt+XcAeCwJiBhpdI2uOy5tP80ORLe9iUmjbvhimXyrkwER2tHJZJMkLw2L/agL7SWQer1+OMmf9FktzlrqfpbHALsBBC0HIus/zbxICvzwVqrV6om9BuJ53twwWEvNlGsxybd047cbjcbUXgFpNBpTtZpsduqdvCRlp9V5X94rICRXWA26eXnW2kL61N2NSQTuNhCSw1Kjqw7FWqaWsLv1VkTgzd0CQtJXALLmzjIYbKEPWWBWJ6X5ZYGg1bwYsUDc3xYQEfcXCt8kTe52A/E872Tp4CjfWNtuIkrGmOvCoKS9pQejqUURINJDI/mA9T1kT5kGSCaSuGKl+yEg+aK1SHq8eYBIt57ko3bnEa1v9Cd0FMQ4mfKmSBa7G8DrKUB2AnhS+sKRtR+SvNLpFfm+fyHJp8OYkyeNl88O8v1FbtOZKOS2PjFfDOB2qeGjUZjk6QC+APCS8AC4KGu3ZpImyekd/QPvnQ/qSUD2ywAAAABJRU5ErkJggg==" alt="facebook-new"></i></a>
+
+                    <a href="#"><i class="fab fa-twitter"><img height="40px" src="data:image/png;base64,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" alt="twitter-circled--v1"></i></a>
+
+                    <a href="#"><i class="fab fa-youtube"><img height="40px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD7UlEQVR4nO2Za6hlYxjHFw6hGNcpl1zDCE25zBRKGTNDhNI2X3Ccfdb6/d91TocOhTS1hjRISoMPLh/kixqSW5QzPik1jZFLLgefhNAwMozrOHp4Vq05mbX2Xnsz68P611u79vM+l/d9n+f572dHUYsWLVq0aNGiNwB7p2l6agjhciAF7pD0GPCspA3Am8AnwNfAd762S5rLF7Ct8N0XwMe+7zXgeeBRSWuAYHYkLZF0VJZlI9EgkHQccJekdyX9VnTq/1zAL8AzFljfQYQQupJ+nKf0Szt9SU8Aa4EbgFWSlpsRYFG32z0yTdODbQH7z7vVBYXvjgghnOKnvhzoAJN208Djkl6SNFs8QOB34KZ+grDns8M327VfbMaj3YAsy0aApf6ELaA/JV1RubHT6ewFfOZB3BdF0R5RQyDpfg9mcy/Ci134q4GTbMjodrsH5AUEOKZUOIRwlQfyStRASNps/oUQVpYKAjd7xA9HDQTwlPs3VSooaZ0L9l4ddt4/A5xR19EqSLrTX8xDVYIveCBXVmr99/1zXjLXjY+PHxINGcA1bmOmypE3TDBJknPrGJrXd761J2CsIBoSgKV+0O9XCb7tTiyuY6jQvJ4rfP4gSZJL6jpfBHCi6/0mKoPxJRc8KaqB3HnXtQx4r3BDLxtfiwZACGGh6/qjtMc5DZkzqjFoIIYsy/aUdJ2RyZxmSHpkbGzs8Dr6R0dH981t2OcyR753gwuGEUjBgYMk3WME0PUbA7610+nsU8PGr6ZjamrqwDKhv0la3QTdVSA5jFjaExskf4At3hQX7rZA4jg+GXixkDezIYTL+rTxQy83stWE6rLd//ppZVk24gy4PNmBz81QHMdHNzHZgcPyHlXlyKwbXDRoICGEC4F3Cs9oJoRweh29OawtuK5PozIAb3kgZ0cNbIhJkpzT028SSa+78WVNpCghhJX5L9dSQeBpd2K8jqFh5EEZJCVu48kqwbtdcG2p4K73D0xDymCVzw96TZXgeM6LogYCfzEhhGtLBZMkucAD2WqlM2oY8GIk6bxSQXvX+SjIKkTUIExPT+8n6Sfzz/pJ5Qar954nrw6z4gxxHLShpw3AmYW57Sbg0josdRjI/qEkSwp96ee+RqdWr3NaURhXfmQzWOBeSTdKuho4P47j0yYmJo41ftZrXpmDk5OTh6ZpekKapmclSXKRJbCkW4AHbLJojTSn7O7DFpuC9n0ani+32a34SfQ6dN5RmLrvtHLm2oeu7f4qbi+l7b3CTjqO4+OBFZKuB1YDD0pa7yOgjZI+9L8Lcse3lf2t4PIbPSfXmz5gtetfYfaaWDlbtGjRokWLqMn4C/yukgeVdXYFAAAAAElFTkSuQmCC" alt="youtube-play--v1"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
         
     <script src="script.js"></script>
     <script src="email/email.js"></script>
 </body>
 </html>
+
